@@ -11,6 +11,7 @@
     <modules>
         <module>spring-cloud-gateway</module>
         <module>spring-data-jpa-app</module>
+        <module>spring-data-jpa-multi-session-app</module>
     </modules>
 
 
