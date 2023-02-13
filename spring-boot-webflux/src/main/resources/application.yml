@@ -1,0 +1,7 @@
+
+spring:
+  application:
+    name: webflux
+
+server:
+  port: 7008
