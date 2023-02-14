@@ -1,7 +1,32 @@
-
+server:
+  port: 7008
 spring:
   application:
     name: webflux
-
-server:
-  port: 7008
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+  r2dbc:
+    name: ud
+    password: ud123
+    url: r2dbc:h2:mem:///h2test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE # H2不开启控制台
+    pool:
+      enabled: true
+      max-size: 10
+      initial-size: 10
+      validation-query: select 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: h2 # h2数据库
+    open-in-view: true
+  h2:
+    console:
+      enabled: false  #h2数据库控制台 ,windows上无法在~/下创建，所以连不上
+      settings:
+        web-admin-password: ud123
+        trace: false
+        web-allow-others: false
+      path: /h2-console

@@ -1,5 +1,8 @@
 package com.universedust.webflux.controller;
 
+import com.universedust.webflux.entity.ReactUser;
+import com.universedust.webflux.repository.ReactUserRepository;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -26,5 +29,16 @@ public class TestController {
         }
         return Flux.just(list);
     }
+
+
+    @Resource
+    ReactUserRepository repository;
+
+    @GetMapping("/user")
+    public Flux<ReactUser> listUser(){
+        System.out.println("-------------user");
+        return repository.findAll();
+    }
+
 
 }
