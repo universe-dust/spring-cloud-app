@@ -1,5 +1,27 @@
 server:
   port: 8000
 spring:
-  thymeleaf:
-    check-template: false
+  application:
+    name: eureka-serve
+  freemarker:
+    prefer-file-system-access: false
+  security:
+    user:
+      name: eureka
+      password: eureka
+
+eureka:
+  instance:
+    hostname: 192.168.3.60 # 服务端实例名
+  client:
+    register-with-eureka: false # 不注册自己
+    fetch-registry: false # 自己是注册中心，不检索服务
+    service-url:
+      defaultZone: http://eureka:eureka@${eureka.instance.hostname}:${server.port}/eureka/ # 单机版注册中心
+
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
