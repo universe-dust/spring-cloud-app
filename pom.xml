@@ -15,6 +15,7 @@
         <module>spring-cloud-eureka</module>
         <module>spring-boot-webflux</module>
         <module>spring-cloud-eureka-client</module>
+        <module>spring-security-oauth2-authorization-server</module>
     </modules>
 
 
