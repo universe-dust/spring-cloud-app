@@ -7,3 +7,11 @@
 > spring-cloud-gateway      微服务网关   
 > spring-data-jpa-app       SprigDataJpa 模块     
 > spring-data-jpa-multi-session-app    SpringDataJpa 多数据源     
+> 
+> 
+> 
+
+spring security
+server 
+client 
+resource 
